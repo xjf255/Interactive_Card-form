@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <section class="card reverseCard">
+      <img src="images/bg-card-back.png" alt="back" class="img">
+      <div class="container">
+        <p class="reverseCard__value" id="cvc">000</p>
+      </div>
+    </section>
+
+    <section class="card frontCard">
+      <img src="images/bg-card-front.png" alt="front" class="img">
+      <div class="container">
+        <figure>
+          <img src="images/card-logo.svg" alt="logo" class="logo">
+        </figure>
+        <p class="card__numbers" id="number">
+          0000 0000 0000 0000
+        </p>
+        <span>
+          <p class="card__titular" id="titular">Jane Appleseed</p>
+          <p class="card__time" id="time">00/00</p>
+        </span>
+      </div>
+    </section>
+  </div>
+  <div class="body">
+    <div class="process">
+      <form id="form">
+        <label for="name">Cardholder Name</label>
+        <input type="text" name="name" id="name" class="input" placeholder="e.g Jane Appleseed" required>
+     
+        <label for="number">Card Number</label>
+        <input type="text" name="number" id="number" class="input" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" required pattern="^[0-9\s]+$">
+        <div class="form__el">
+          <label for="month" id="lmonth">Exp. Date (MM/YY)</label>
+          <input type="text" name="month" id="month" class="input" maxlength="2" placeholder="MM" required pattern="^[0-9\s]+$">
+          <input type="text" name="year" id="year" class="input" maxlength="2" placeholder="YY" required pattern="^[0-9\s]+$">
+       
+          <label for="numberCvc" id="lcvc">CVC</label>
+          <input type="text" name="numberCvc" id="numberCvc" class="input" maxlength="3" placeholder="e.g. 123" required pattern="^[0-9\s]+$">
+        </div>
+        <button id="submit">Confirm</button>
+      </form>
+    </div>
+
+    <!-- Completed state start -->
+
+    <div class="success --none">
+      <section class="tranks">
+        <figure class="tranks__img">
+          <img src="images/icon-complete.svg" alt="Completed" class="success__img">
+        </figure>
+
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button>Continue</button>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

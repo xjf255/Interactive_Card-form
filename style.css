@@ -1,0 +1,267 @@
+:root {
+    /* active input border */
+    --LinearGradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    /* input errors */
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Lightgrayishviolet: hsl(270, 3%, 87%);
+    --DarkGrayishViolet: hsl(279, 6%, 55%);
+    --VeryDarkViolet: hsl(278, 68%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--White);
+    color: var(--VeryDarkViolet);
+}
+
+.header {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 5vh;
+    background-image: url(images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    width: 280px;
+    height: 200px;
+    position: relative;
+}
+
+.card .img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.reverseCard {
+    margin-top: 30px;
+    left: 30px;
+}
+
+.frontCard {
+    bottom: 70px;
+    right: 30px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    color: var(--White);
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    height: 1.5em;
+    position: relative;
+    bottom: 20px;
+    right:90px;
+}
+.card__numbers{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.container span{
+    width: 100%;
+    position: relative;
+    top: 15px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container span > p{
+    font-size: .5rem;
+}
+.reverseCard__value {
+    width: min-content;
+    display: inline;
+    position: relative;
+    left: 90px;
+    bottom: 4px;
+}
+
+.process {
+    width: 100vw;
+    height: 60vh;
+    padding: 30px;
+}
+
+label,
+.card__titular {
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: 2px;
+}
+
+#form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.input{
+    padding: 10px;
+    border: 1px solid var(--Lightgrayishviolet);
+    border-radius: 10px;
+}
+
+#form input:active {
+    border-color: var(--LinearGradient);
+}
+
+#form input::placeholder {
+    color: var(--Lightgrayishviolet);
+}
+.form__el{
+    width: 100%;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20px 1fr;
+    grid-template-areas: 
+    "lmonth lmonth lcvc lcvc"
+    "mm yy cvc cvc";    
+    gap: 10px;
+}
+.form__el > *{
+    width: 100%;
+    display: grid;
+}
+#lmonth{
+    grid-area: lmonth;
+}
+#lcvc{
+    grid-area: lcvc;
+}
+#month{
+    grid-area: mm;
+}
+#year{
+    grid-area: yy;
+}
+#numberCvc{
+    grid-area: cvc;
+}
+button {
+    width: 100%;
+    background-color: var(--VeryDarkViolet);
+    color: var(--White);
+    cursor: pointer;
+    padding: 14px;
+    border-style: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.success{
+    width: 100vw;
+    height: 50vh;
+    padding: 30px;
+}
+.tranks{
+    width: initial;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.tranks__img{
+    width: 5rem;
+    height: auto;
+}
+.tranks__img > img{
+    width: 100%;
+    object-fit: cover;
+}
+.tranks > h2{
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.tranks > p{
+    color: var(--DarkGrayishViolet);
+    font-weight: 500;
+}
+.bdError{
+    border-color: var(--Red);
+}
+.error{
+    font-size: 14px;
+    color: var(--Red);
+}
+.--none{
+    display: none;
+}
+@media(width >= 768px) {
+    body{
+        display: flex;
+    }
+    .header{
+        width: 30vw;
+        height: 100vh;
+        background-image: url(images/bg-main-desktop.png);
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .body{
+        width: 70vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card{
+        width: 330px;
+    }
+    .process , .success{
+        width: 40%;
+        min-width: 400px;
+        height: 50%;
+    }
+    .frontCard{
+        bottom: 0;
+        left: 150px;
+        right: 0;
+    }
+    .reverseCard{
+        margin-top: 0;
+        left: 200px;
+    }
+    .reverseCard__value{
+        left: 110px;
+    }
+    .container{
+        height: 90%;
+    }
+    .logo{
+        right: 120px;
+        bottom: 30px;
+    }
+    .card__numbers{
+        position: relative;
+        right: 25px;
+    }
+}
